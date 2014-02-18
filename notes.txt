@@ -1,0 +1,20 @@
+Steps of taming the bad code
+  * Run the client GameRunner to see the output.
+  * Check the public interface (i.e. all the public methods) of the server side classes to see how they are used by clients.
+  * If a public method of a server side class is not used by a client, change it from public to private.
+  * Read the code of the client GameRunner and pay attention how the public interface of the server side is used by the client.
+  * Read the code of the class Game and pay attention to the public methods.
+
+  * List all the behaviors of the public interface of server side called by clients.
+  * List all major behaviours of the code to be tamed which are not going to be changed in the near future.
+  * Write characterization tests for all the public interface of the server side.
+  * Write characterization tests for all the major behaviours except for those included in the public interface.
+
+  * Eliminate all duplicated code.
+  * Break responsibilities of big classes into new classes. Find all the nouns from the descriptions of all the major behaviours and use them to be the candidates of new classes.
+  * Use Sonar to fix all Major and more severe issues.
+
+
+To Do
+=====
+  * Make method Game.createRockQuestion() private since it's not used by any clients.
