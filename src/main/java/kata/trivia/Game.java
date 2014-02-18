@@ -26,9 +26,7 @@ public class Game {
         }
     }
 
-    public boolean add(String playerName) {
-
-
+    public void add(String playerName) {
         players.add(playerName);
         places[players.size()] = 0;
         purses[players.size()] = 0;
@@ -36,7 +34,6 @@ public class Game {
 
         System.out.println(playerName + " was added");
         System.out.println("They are player number " + players.size());
-        return true;
     }
 
     public void roll(int roll) {
