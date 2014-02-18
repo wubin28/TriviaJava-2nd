@@ -104,10 +104,10 @@ public class Game {
                         + purses[currentPlayer]
                         + " Gold Coins.");
 
-                boolean winner = willGameContinue();
+                boolean willContinue = willGameContinue();
                 nextPlayer();
 
-                return winner;
+                return willContinue;
             } else {
                 nextPlayer();
                 return true;
