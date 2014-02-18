@@ -47,7 +47,7 @@ public class Game {
         return true;
     }
 
-    public int howManyPlayers() {
+    private int howManyPlayers() {
         return players.size();
     }
 
