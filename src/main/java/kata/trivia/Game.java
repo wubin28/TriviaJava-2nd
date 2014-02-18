@@ -104,7 +104,7 @@ public class Game {
                         + purses[currentPlayer]
                         + " Gold Coins.");
 
-                boolean winner = didPlayerWin();
+                boolean winner = willGameContinue();
                 nextPlayer();
 
                 return winner;
@@ -123,10 +123,10 @@ public class Game {
                     + purses[currentPlayer]
                     + " Gold Coins.");
 
-            boolean winner = didPlayerWin();
+            boolean willContinue = willGameContinue();
             nextPlayer();
 
-            return winner;
+            return willContinue;
         }
     }
 
@@ -145,7 +145,7 @@ public class Game {
     }
 
 
-    private boolean didPlayerWin() {
+    private boolean willGameContinue() {
         return !(purses[currentPlayer] == 6);
     }
 }
