@@ -10,6 +10,7 @@ Steps of taming the bad code
   * Write characterization tests for all the public interface of the server side.
   * Write characterization tests for all the major behaviours except for those included in the public interface.
 
+  * Do not touch client side code in refactoring.
   * Eliminate all duplicated code.
   * Break responsibilities of big classes into new classes. Find all the nouns from the descriptions of all the major behaviours and use them to be the candidates of new classes.
   * Use Sonar to fix all Major and more severe issues.

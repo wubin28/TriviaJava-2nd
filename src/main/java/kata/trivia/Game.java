@@ -26,7 +26,7 @@ public class Game {
         }
     }
 
-    public String createRockQuestion(int index) {
+    private String createRockQuestion(int index) {
         return "Rock Question " + index;
     }
 
