@@ -18,4 +18,31 @@ public class GameTest {
 
         assertEquals(true, willContinue);
     }
+
+    @Test
+    public void GIVEN_one_player_WHEN_she_answered_correctly_for_6_times_THEN_game_will_not_continue() {
+        Game aGame = new Game();
+
+        aGame.add("Chet");
+
+        aGame.roll(1);
+        boolean willContinue = aGame.wasCorrectlyAnswered();
+
+        aGame.roll(1);
+        willContinue = aGame.wasCorrectlyAnswered();
+
+        aGame.roll(1);
+        willContinue = aGame.wasCorrectlyAnswered();
+
+        aGame.roll(1);
+        willContinue = aGame.wasCorrectlyAnswered();
+
+        aGame.roll(1);
+        willContinue = aGame.wasCorrectlyAnswered();
+
+        aGame.roll(1);
+        willContinue = aGame.wasCorrectlyAnswered();
+
+        assertEquals(false, willContinue);
+    }
 }
