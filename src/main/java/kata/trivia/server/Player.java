@@ -7,6 +7,7 @@ public class Player {
     private final String name;
     private int place = 0;
     private int numberOfGoldCoins = 0;
+    private boolean inPenaltyBox = false;
 
     public Player(String playerName) {
         this.name = playerName;

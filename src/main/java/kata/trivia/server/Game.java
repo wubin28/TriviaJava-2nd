@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Game {
     private ArrayList<Player> players = new ArrayList<Player>();
-    private boolean[] inPenaltyBox = new boolean[6];
 
     private int currentPlayerInt = 0;
     private boolean isGettingOutOfPenaltyBox;
@@ -13,7 +12,6 @@ public class Game {
 
     public void add(String playerName) {
         players.add(new Player(playerName));
-        inPenaltyBox[players.size()] = false;
 
         System.out.println(playerName + " was added");
         System.out.println("They are player number " + players.size());
