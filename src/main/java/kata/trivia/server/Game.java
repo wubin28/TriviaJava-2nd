@@ -25,7 +25,7 @@ public class Game {
      * @param rollingNumber
      */
     public void roll(int rollingNumber) {
-        System.out.println(players.get(currentPlayerIndex) + " is the current player");
+        System.out.println(players.get(currentPlayerIndex).getPlayerName() + " is the current player");
         System.out.println("They have rolled a " + rollingNumber);
 
         if (players.get(currentPlayerIndex).isInPenaltyBox()) {
