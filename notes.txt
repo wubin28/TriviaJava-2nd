@@ -23,7 +23,7 @@ Steps of taming the bad code
 
   * Keep the old interface of a big class of server side but transfer all its logic to several new created small classes with high cohesion and low coupling.
   ** Break responsibilities of big classes into new classes. Find all the nouns from the descriptions of all the major behaviours and use them to be the candidates of new classes.
-  ** Eliminate if statements in the implementation of public interfaces.
+  ** Replace snarled if-else statements with bulleted early returned if statements in the implementation of public interfaces.
   ** Use Sonar to fix all Major and more severe issues.
 
   * Deprecate the old bad interface and create new interface for new clients
