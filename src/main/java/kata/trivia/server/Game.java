@@ -13,15 +13,6 @@ public class Game {
     private QuestionMaker questionMaker = new QuestionMaker();
     private Player currentPlayer;
 
-    public Game() {
-        for (int i = 0; i < 50; i++) {
-            popQuestions.addLast("Pop Question " + i);
-            scienceQuestions.addLast(("Science Question " + i));
-            sportsQuestions.addLast(("Sports Question " + i));
-            rockQuestions.addLast("Rock Question " + i);
-        }
-    }
-
     public void add(String playerName) {
         players.add(playerName);
         places[players.size()] = 0;
