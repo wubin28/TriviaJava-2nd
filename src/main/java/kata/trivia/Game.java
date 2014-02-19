@@ -103,6 +103,12 @@ public class Game {
         return "Rock";
     }
 
+    /**
+     * Present a gold coin to the current player who answers the question correctly,
+     * find next player, and determine if the game will continue.
+     *
+     * @return
+     */
     public boolean wasCorrectlyAnswered() {
         if (inPenaltyBox[currentPlayer]) {
             if (isGettingOutOfPenaltyBox) {

@@ -12,11 +12,11 @@ Steps of taming the bad code
 
   * Write characterization tests to protect all public methods of the server side
   ** Read the code of the server side and pay attention to the implementation of the  public methods at first.
-  ** Add comments for the public methods of the server side with poor names.
   ** Fix all typos.
   ** Inline unnecessary methods.
   ** Extract methods and eliminate all duplicated code.
   ** Choose good names for all non-public methods of server side if necessary.
+  ** Add comments for the public methods of the server side with poor names.
   ** List all the behaviors of the public interface of server side called by clients.
   ** List all major behaviours of the code to be tamed which are not going to be changed in the near future.
   ** Write acceptance characterization tests using the narrowed public interface of the server side.
