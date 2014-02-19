@@ -86,7 +86,7 @@ public class Game {
         currentPlayer.winGoldCoin();
         System.out.println(players.get(currentPlayerInt)
                 + " now has "
-                + currentPlayer.getNumberOfGoldCoins（）
+                + currentPlayer.getNumberOfGoldCoins()
                 + " Gold Coins.");
 
         boolean willContinue = willGameContinue();

@@ -24,4 +24,8 @@ public class Player {
     public void winGoldCoin() {
         numberOfGoldCoins++;
     }
+
+    public int getNumberOfGoldCoins() {
+        return numberOfGoldCoins;
+    }
 }
