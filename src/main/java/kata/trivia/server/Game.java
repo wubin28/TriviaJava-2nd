@@ -14,7 +14,7 @@ public class Game {
     private LinkedList sportsQuestions = new LinkedList();
     private LinkedList rockQuestions = new LinkedList();
 
-    private int currentPlayer = 0;
+    private int currentPlayerInt = 0;
     private boolean isGettingOutOfPenaltyBox;
     private QuestionMaker questionMaker = new QuestionMaker();
 
@@ -46,17 +46,17 @@ public class Game {
      * @param rollingNumber
      */
     public void roll(int rollingNumber) {
-        System.out.println(players.get(currentPlayer) + " is the current player");
+        System.out.println(players.get(currentPlayerInt) + " is the current player");
         System.out.println("They have rolled a " + rollingNumber);
 
-        if (inPenaltyBox[currentPlayer]) {
+        if (inPenaltyBox[currentPlayerInt]) {
             if (rollingNumber % 2 != 0) {
                 isGettingOutOfPenaltyBox = true;
 
-                System.out.println(players.get(currentPlayer) + " is getting out of the penalty box");
+                System.out.println(players.get(currentPlayerInt) + " is getting out of the penalty box");
                 playerMoveForwardAndBeAskedQuestion(rollingNumber);
             } else {
-                System.out.println(players.get(currentPlayer) + " is not getting out of the penalty box");
+                System.out.println(players.get(currentPlayerInt) + " is not getting out of the penalty box");
                 isGettingOutOfPenaltyBox = false;
             }
 
@@ -68,14 +68,14 @@ public class Game {
     }
 
     private void playerMoveForwardAndBeAskedQuestion(int roll) {
-        places[currentPlayer] = places[currentPlayer] + roll;
-        if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
+        places[currentPlayerInt] = places[currentPlayerInt] + roll;
+        if (places[currentPlayerInt] > 11) places[currentPlayerInt] = places[currentPlayerInt] - 12;
 
-        System.out.println(players.get(currentPlayer)
+        System.out.println(players.get(currentPlayerInt)
                 + "'s new location is "
-                + places[currentPlayer]);
-        System.out.println("The category is " + questionMaker.currentCategory(currentPlayer));
-        questionMaker.askQuestion(currentPlayer);
+                + places[currentPlayerInt]);
+        System.out.println("The category is " + questionMaker.currentCategory(currentPlayerInstance));
+        questionMaker.askQuestion(currentPlayerInstance);
     }
 
     /**
@@ -85,7 +85,7 @@ public class Game {
      * @return
      */
     public boolean wasCorrectlyAnswered() {
-        if (inPenaltyBox[currentPlayer]) {
+        if (inPenaltyBox[currentPlayerInt]) {
             if (isGettingOutOfPenaltyBox) {
                 return winGoldCoinAndFindNextPlayer();
             } else {
@@ -102,10 +102,10 @@ public class Game {
 
     private boolean winGoldCoinAndFindNextPlayer() {
         System.out.println("Answer was correct!!!!");
-        purses[currentPlayer]++;
-        System.out.println(players.get(currentPlayer)
+        purses[currentPlayerInt]++;
+        System.out.println(players.get(currentPlayerInt)
                 + " now has "
-                + purses[currentPlayer]
+                + purses[currentPlayerInt]
                 + " Gold Coins.");
 
         boolean willContinue = willGameContinue();
@@ -122,20 +122,20 @@ public class Game {
      */
     public boolean wrongAnswer() {
         System.out.println("Question was incorrectly answered");
-        System.out.println(players.get(currentPlayer) + " was sent to the penalty box");
-        inPenaltyBox[currentPlayer] = true;
+        System.out.println(players.get(currentPlayerInt) + " was sent to the penalty box");
+        inPenaltyBox[currentPlayerInt] = true;
 
         nextPlayer();
         return true;
     }
 
     private void nextPlayer() {
-        currentPlayer++;
-        if (currentPlayer == players.size()) currentPlayer = 0;
+        currentPlayerInt++;
+        if (currentPlayerInt == players.size()) currentPlayerInt = 0;
     }
 
 
     private boolean willGameContinue() {
-        return !(purses[currentPlayer] == 6);
+        return !(purses[currentPlayerInt] == 6);
     }
 }
