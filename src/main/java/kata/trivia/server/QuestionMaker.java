@@ -4,14 +4,14 @@ package kata.trivia.server;
  * Created by ben on 14-2-19.
  */
 public class QuestionMaker {
-    public void askQuestion() {
-        if (currentCategory() == "Pop")
+    public void askQuestion(Player currentPlayer) {
+        if (currentCategory(currentPlayer) == "Pop")
             System.out.println(popQuestions.removeFirst());
-        if (currentCategory() == "Science")
+        if (currentCategory(currentPlayer) == "Science")
             System.out.println(scienceQuestions.removeFirst());
-        if (currentCategory() == "Sports")
+        if (currentCategory(currentPlayer) == "Sports")
             System.out.println(sportsQuestions.removeFirst());
-        if (currentCategory() == "Rock")
+        if (currentCategory(currentPlayer) == "Rock")
             System.out.println(rockQuestions.removeFirst());
 
     }
