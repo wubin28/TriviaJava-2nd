@@ -54,7 +54,7 @@ public class Game {
 
         System.out.println(players.get(currentPlayerInt)
                 + "'s new location is "
-                + places[currentPlayerInt]);
+                + currentPlayer.getPlace());
         System.out.println("The category is " + questionMaker.currentCategory(currentPlayer));
         questionMaker.askQuestion(currentPlayer);
     }
