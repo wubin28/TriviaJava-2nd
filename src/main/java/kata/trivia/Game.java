@@ -36,6 +36,15 @@ public class Game {
         System.out.println("They are player number " + players.size());
     }
 
+    /**
+     * Choose one of following as the next step of the current player
+     * according to the dice rolling number.
+     * 1) moving forward and being asked a question
+     * 2) getting out of the penalty box, moving forward and being asked a question
+     * 3) staying in the penalty box
+     *
+     * @param rollingNumber
+     */
     public void roll(int rollingNumber) {
         System.out.println(players.get(currentPlayer) + " is the current player");
         System.out.println("They have rolled a " + rollingNumber);
