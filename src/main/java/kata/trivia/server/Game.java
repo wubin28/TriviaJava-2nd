@@ -13,7 +13,7 @@ public class Game {
     private Player currentPlayer;
 
     public void add(String playerName) {
-        players.add(playerName);
+        players.add(new Player(playerName));
         places[players.size()] = 0;
         purses[players.size()] = 0;
         inPenaltyBox[players.size()] = false;
