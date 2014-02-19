@@ -18,7 +18,9 @@ Steps of taming the bad code
   ** Choose good names for all non-public methods of server side if necessary.
   ** List all the behaviors of the public interface of server side called by clients.
   ** List all major behaviours of the code to be tamed which are not going to be changed in the near future.
-  ** Write characterization tests for all the public interface of the server side.
+  ** Write acceptance characterization tests using the narrowed public interface of the server side.
+
+  * Break the big class down into several classes to share the responsibilities.
   ** Break responsibilities of big classes into new classes. Find all the nouns from the descriptions of all the major behaviours and use them to be the candidates of new classes.
   ** Use Sonar to fix all Major and more severe issues.
 

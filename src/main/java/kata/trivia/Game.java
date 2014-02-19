@@ -36,16 +36,16 @@ public class Game {
         System.out.println("They are player number " + players.size());
     }
 
-    public void roll(int roll) {
+    public void roll(int rollingNumber) {
         System.out.println(players.get(currentPlayer) + " is the current player");
-        System.out.println("They have rolled a " + roll);
+        System.out.println("They have rolled a " + rollingNumber);
 
         if (inPenaltyBox[currentPlayer]) {
-            if (roll % 2 != 0) {
+            if (rollingNumber % 2 != 0) {
                 isGettingOutOfPenaltyBox = true;
 
                 System.out.println(players.get(currentPlayer) + " is getting out of the penalty box");
-                playerMoveForwardAndBeAskedQuestion(roll);
+                playerMoveForwardAndBeAskedQuestion(rollingNumber);
             } else {
                 System.out.println(players.get(currentPlayer) + " is not getting out of the penalty box");
                 isGettingOutOfPenaltyBox = false;
@@ -53,7 +53,7 @@ public class Game {
 
         } else {
 
-            playerMoveForwardAndBeAskedQuestion(roll);
+            playerMoveForwardAndBeAskedQuestion(rollingNumber);
         }
 
     }
