@@ -15,4 +15,17 @@ public class QuestionMaker {
             System.out.println(rockQuestions.removeFirst());
 
     }
+
+    private String currentCategory(Game game) {
+        if (game.places[game.currentPlayer] == 0) return "Pop";
+        if (game.places[game.currentPlayer] == 4) return "Pop";
+        if (game.places[game.currentPlayer] == 8) return "Pop";
+        if (game.places[game.currentPlayer] == 1) return "Science";
+        if (game.places[game.currentPlayer] == 5) return "Science";
+        if (game.places[game.currentPlayer] == 9) return "Science";
+        if (game.places[game.currentPlayer] == 2) return "Sports";
+        if (game.places[game.currentPlayer] == 6) return "Sports";
+        if (game.places[game.currentPlayer] == 10) return "Sports";
+        return "Rock";
+    }
 }
