@@ -27,22 +27,26 @@ public class GameTest {
 
         aGame.roll(1);
         boolean willContinue = aGame.wasCorrectlyAnswered();
+        assertEquals(true, willContinue);
 
         aGame.roll(1);
         willContinue = aGame.wasCorrectlyAnswered();
+        assertEquals(true, willContinue);
 
         aGame.roll(1);
         willContinue = aGame.wasCorrectlyAnswered();
+        assertEquals(true, willContinue);
 
         aGame.roll(1);
         willContinue = aGame.wasCorrectlyAnswered();
+        assertEquals(true, willContinue);
 
         aGame.roll(1);
         willContinue = aGame.wasCorrectlyAnswered();
+        assertEquals(true, willContinue);
 
         aGame.roll(1);
         willContinue = aGame.wasCorrectlyAnswered();
-
         assertEquals(false, willContinue);
     }
 }
