@@ -50,8 +50,7 @@ public class Game {
     }
 
     private void playerMoveForwardAndBeAskedQuestion(int roll) {
-        places[currentPlayerInt] = places[currentPlayerInt] + roll;
-        if (places[currentPlayerInt] > 11) places[currentPlayerInt] = places[currentPlayerInt] - 12;
+        currentPlayer.moveForward(roll);
 
         System.out.println(players.get(currentPlayerInt)
                 + "'s new location is "

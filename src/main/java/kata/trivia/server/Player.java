@@ -15,4 +15,9 @@ public class Player {
     public int getPlace() {
         return place;
     }
+
+    public void moveForward(int roll) {
+        place += roll;
+        if (place > 11) place -= 12;
+    }
 }
