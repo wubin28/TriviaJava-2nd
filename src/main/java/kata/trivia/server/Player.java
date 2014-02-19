@@ -37,4 +37,8 @@ public class Player {
     public void sendToPenaltyBox() {
         this.inPenaltyBox = true;
     }
+
+    public String getPlayerName() {
+        return this.name;
+    }
 }
