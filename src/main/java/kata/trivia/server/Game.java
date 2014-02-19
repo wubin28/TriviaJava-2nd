@@ -28,22 +28,21 @@ public class Game {
         System.out.println(players.get(currentPlayerIndex).getPlayerName() + " is the current player");
         System.out.println("They have rolled a " + rollingNumber);
 
-        if (players.get(currentPlayerIndex).isInPenaltyBox()) {
-            if (rollingNumber % 2 != 0) {
-                isGettingOutOfPenaltyBox = true;
-
-                System.out.println(players.get(currentPlayerIndex).getPlayerName() + " is getting out of the penalty box");
-                playerMoveForwardAndBeAskedQuestion(rollingNumber);
-            } else {
-                System.out.println(players.get(currentPlayerIndex).getPlayerName() + " is not getting out of the penalty box");
-                isGettingOutOfPenaltyBox = false;
-            }
-
-        } else {
-
+        if (!players.get(currentPlayerIndex).isInPenaltyBox()) {
             playerMoveForwardAndBeAskedQuestion(rollingNumber);
+            return;
         }
 
+        if (rollingNumber % 2 != 0) {
+            isGettingOutOfPenaltyBox = true;
+
+            System.out.println(players.get(currentPlayerIndex).getPlayerName() + " is getting out of the penalty box");
+            playerMoveForwardAndBeAskedQuestion(rollingNumber);
+            return;
+        }
+
+        System.out.println(players.get(currentPlayerIndex).getPlayerName() + " is not getting out of the penalty box");
+        isGettingOutOfPenaltyBox = false;
     }
 
     private void playerMoveForwardAndBeAskedQuestion(int roll) {
