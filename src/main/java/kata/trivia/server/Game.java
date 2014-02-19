@@ -29,7 +29,7 @@ public class Game {
         System.out.println(players.get(currentPlayerInt) + " is the current player");
         System.out.println("They have rolled a " + rollingNumber);
 
-        if (inPenaltyBox[currentPlayerInt]) {
+        if (currentPlayer.isInPenaltyBox()) {
             if (rollingNumber % 2 != 0) {
                 isGettingOutOfPenaltyBox = true;
 
@@ -64,7 +64,7 @@ public class Game {
      * @return
      */
     public boolean wasCorrectlyAnswered() {
-        if (inPenaltyBox[currentPlayerInt]) {
+        if (currentPlayer.isInPenaltyBox()) {
             if (isGettingOutOfPenaltyBox) {
                 return winGoldCoinAndFindNextPlayer();
             } else {
@@ -102,7 +102,7 @@ public class Game {
     public boolean wrongAnswer() {
         System.out.println("Question was incorrectly answered");
         System.out.println(players.get(currentPlayerInt) + " was sent to the penalty box");
-        inPenaltyBox[currentPlayerInt] = true;
+        currentPlayer.sendToPenaltyBox();
 
         nextPlayer();
         return true;
