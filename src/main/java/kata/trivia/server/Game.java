@@ -5,10 +5,9 @@ import java.util.ArrayList;
 public class Game {
     private ArrayList<Player> players = new ArrayList<Player>();
 
-    private int currentPlayerInt = 0;
+    private int currentPlayerIndex = 0;
     private boolean isGettingOutOfPenaltyBox;
     private QuestionMaker questionMaker = new QuestionMaker();
-    private Player currentPlayer;
 
     public void add(String playerName) {
         players.add(new Player(playerName));
@@ -26,17 +25,17 @@ public class Game {
      * @param rollingNumber
      */
     public void roll(int rollingNumber) {
-        System.out.println(players.get(currentPlayerInt) + " is the current player");
+        System.out.println(players.get(currentPlayerIndex) + " is the current player");
         System.out.println("They have rolled a " + rollingNumber);
 
-        if (currentPlayer.isInPenaltyBox()) {
+        if (players.get(currentPlayerIndex).isInPenaltyBox()) {
             if (rollingNumber % 2 != 0) {
                 isGettingOutOfPenaltyBox = true;
 
-                System.out.println(players.get(currentPlayerInt) + " is getting out of the penalty box");
+                System.out.println(players.get(currentPlayerIndex) + " is getting out of the penalty box");
                 playerMoveForwardAndBeAskedQuestion(rollingNumber);
             } else {
-                System.out.println(players.get(currentPlayerInt) + " is not getting out of the penalty box");
+                System.out.println(players.get(currentPlayerIndex) + " is not getting out of the penalty box");
                 isGettingOutOfPenaltyBox = false;
             }
 
@@ -48,13 +47,13 @@ public class Game {
     }
 
     private void playerMoveForwardAndBeAskedQuestion(int roll) {
-        currentPlayer.moveForward(roll);
+        players.get(currentPlayerIndex).moveForward(roll);
 
-        System.out.println(players.get(currentPlayerInt)
+        System.out.println(players.get(currentPlayerIndex)
                 + "'s new location is "
-                + currentPlayer.getPlace());
-        System.out.println("The category is " + questionMaker.currentCategory(currentPlayer));
-        questionMaker.askQuestion(currentPlayer);
+                + players.get(currentPlayerIndex).getPlace());
+        System.out.println("The category is " + questionMaker.currentCategory(players.get(currentPlayerIndex)));
+        questionMaker.askQuestion(players.get(currentPlayerIndex));
     }
 
     /**
@@ -64,7 +63,7 @@ public class Game {
      * @return
      */
     public boolean wasCorrectlyAnswered() {
-        if (currentPlayer.isInPenaltyBox()) {
+        if (players.get(currentPlayerIndex).isInPenaltyBox()) {
             if (isGettingOutOfPenaltyBox) {
                 return winGoldCoinAndFindNextPlayer();
             } else {
@@ -81,10 +80,10 @@ public class Game {
 
     private boolean winGoldCoinAndFindNextPlayer() {
         System.out.println("Answer was correct!!!!");
-        currentPlayer.winGoldCoin();
-        System.out.println(players.get(currentPlayerInt)
+        players.get(currentPlayerIndex).winGoldCoin();
+        System.out.println(players.get(currentPlayerIndex)
                 + " now has "
-                + currentPlayer.getNumberOfGoldCoins()
+                + players.get(currentPlayerIndex).getNumberOfGoldCoins()
                 + " Gold Coins.");
 
         boolean willContinue = willGameContinue();
@@ -101,20 +100,20 @@ public class Game {
      */
     public boolean wrongAnswer() {
         System.out.println("Question was incorrectly answered");
-        System.out.println(players.get(currentPlayerInt) + " was sent to the penalty box");
-        currentPlayer.sendToPenaltyBox();
+        System.out.println(players.get(currentPlayerIndex) + " was sent to the penalty box");
+        players.get(currentPlayerIndex).sendToPenaltyBox();
 
         nextPlayer();
         return true;
     }
 
     private void nextPlayer() {
-        currentPlayerInt++;
-        if (currentPlayerInt == players.size()) currentPlayerInt = 0;
+        currentPlayerIndex++;
+        if (currentPlayerIndex == players.size()) currentPlayerIndex = 0;
     }
 
 
     private boolean willGameContinue() {
-        return !(currentPlayer.getNumberOfGoldCoins() == 6);
+        return !(players.get(currentPlayerIndex).getNumberOfGoldCoins() == 6);
     }
 }
