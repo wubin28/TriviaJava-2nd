@@ -1,4 +1,4 @@
-package kata.trivia;
+package kata.trivia.server;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -37,8 +37,7 @@ public class Game {
     }
 
     /**
-     * Choose one of following as the next step of the current player
-     * according to the dice rolling number.
+     * Choose one of following as the next step of the current player according to the dice rolling number.
      * 1) moving forward and being asked a question
      * 2) getting out of the penalty box, moving forward and being asked a question
      * 3) staying in the penalty box

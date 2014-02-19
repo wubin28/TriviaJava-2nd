@@ -1,4 +1,6 @@
-package kata.trivia;
+package kata.trivia.client;
+
+import kata.trivia.server.Game;
 
 import java.util.Random;
 

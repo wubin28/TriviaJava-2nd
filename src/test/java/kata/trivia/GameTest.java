@@ -1,6 +1,7 @@
 package kata.trivia;
 
 
+import kata.trivia.server.Game;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
