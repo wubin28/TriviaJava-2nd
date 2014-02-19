@@ -139,6 +139,12 @@ public class Game {
         return willContinue;
     }
 
+    /**
+     * Send the current play to the penalty box who answers the question wrongly, find
+     * next player, and determine if the game will continue.
+     *
+     * @return
+     */
     public boolean wrongAnswer() {
         System.out.println("Question was incorrectly answered");
         System.out.println(players.get(currentPlayer) + " was sent to the penalty box");
