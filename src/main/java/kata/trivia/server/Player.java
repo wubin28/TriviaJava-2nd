@@ -29,4 +29,12 @@ public class Player {
     public int getNumberOfGoldCoins() {
         return numberOfGoldCoins;
     }
+
+    public boolean isInPenaltyBox() {
+        return this.inPenaltyBox;
+    }
+
+    public void sendToPenaltyBox() {
+        this.inPenaltyBox = true;
+    }
 }
