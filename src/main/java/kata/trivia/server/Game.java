@@ -62,19 +62,16 @@ public class Game {
      * @return
      */
     public boolean wasCorrectlyAnswered() {
-        if (players.get(currentPlayerIndex).isInPenaltyBox()) {
-            if (isGettingOutOfPenaltyBox) {
-                return winGoldCoinAndFindNextPlayer();
-            } else {
-                nextPlayer();
-                return true;
-            }
-
-
-        } else {
-
+        if (!players.get(currentPlayerIndex).isInPenaltyBox()) {
             return winGoldCoinAndFindNextPlayer();
         }
+
+        if (isGettingOutOfPenaltyBox) {
+            return winGoldCoinAndFindNextPlayer();
+        }
+
+        nextPlayer();
+        return true;
     }
 
     private boolean winGoldCoinAndFindNextPlayer() {
