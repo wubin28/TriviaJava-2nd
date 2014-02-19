@@ -5,7 +5,7 @@ package kata.trivia.server;
  */
 public class Player {
     private final String name;
-    private int place;
+    private int place = 0;
 
     public Player(String playerName) {
         this.name = playerName;
