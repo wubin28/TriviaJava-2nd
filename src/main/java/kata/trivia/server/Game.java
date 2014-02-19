@@ -78,18 +78,6 @@ public class Game {
         questionMaker.askQuestion();
     }
 
-    private void askQuestion() {
-        if (currentCategory() == "Pop")
-            System.out.println(popQuestions.removeFirst());
-        if (currentCategory() == "Science")
-            System.out.println(scienceQuestions.removeFirst());
-        if (currentCategory() == "Sports")
-            System.out.println(sportsQuestions.removeFirst());
-        if (currentCategory() == "Rock")
-            System.out.println(rockQuestions.removeFirst());
-    }
-
-
     private String currentCategory() {
         if (places[currentPlayer] == 0) return "Pop";
         if (places[currentPlayer] == 4) return "Pop";
