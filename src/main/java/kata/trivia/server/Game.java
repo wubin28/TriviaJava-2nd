@@ -16,7 +16,7 @@ public class Game {
 
     private int currentPlayer = 0;
     private boolean isGettingOutOfPenaltyBox;
-    private QuestionMaker questionMaker;
+    private QuestionMaker questionMaker = new QuestionMaker();
 
     public Game() {
         for (int i = 0; i < 50; i++) {
@@ -74,7 +74,7 @@ public class Game {
         System.out.println(players.get(currentPlayer)
                 + "'s new location is "
                 + places[currentPlayer]);
-        System.out.println("The category is " + questionMaker.currentCategory(this));
+        System.out.println("The category is " + questionMaker.currentCategory());
         questionMaker.askQuestion();
     }
 

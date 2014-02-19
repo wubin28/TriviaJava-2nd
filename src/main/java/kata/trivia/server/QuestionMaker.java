@@ -16,7 +16,7 @@ public class QuestionMaker {
 
     }
 
-    private String currentCategory(Game game) {
+    public String currentCategory() {
         if (game.places[game.currentPlayer] == 0) return "Pop";
         if (game.places[game.currentPlayer] == 4) return "Pop";
         if (game.places[game.currentPlayer] == 8) return "Pop";
