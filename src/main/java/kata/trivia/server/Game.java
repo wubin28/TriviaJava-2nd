@@ -32,10 +32,10 @@ public class Game {
             if (rollingNumber % 2 != 0) {
                 isGettingOutOfPenaltyBox = true;
 
-                System.out.println(players.get(currentPlayerIndex) + " is getting out of the penalty box");
+                System.out.println(players.get(currentPlayerIndex).getPlayerName() + " is getting out of the penalty box");
                 playerMoveForwardAndBeAskedQuestion(rollingNumber);
             } else {
-                System.out.println(players.get(currentPlayerIndex) + " is not getting out of the penalty box");
+                System.out.println(players.get(currentPlayerIndex).getPlayerName() + " is not getting out of the penalty box");
                 isGettingOutOfPenaltyBox = false;
             }
 
@@ -49,7 +49,7 @@ public class Game {
     private void playerMoveForwardAndBeAskedQuestion(int roll) {
         players.get(currentPlayerIndex).moveForward(roll);
 
-        System.out.println(players.get(currentPlayerIndex)
+        System.out.println(players.get(currentPlayerIndex).getPlayerName()
                 + "'s new location is "
                 + players.get(currentPlayerIndex).getPlace());
         System.out.println("The category is " + questionMaker.currentCategory(players.get(currentPlayerIndex)));
@@ -81,7 +81,7 @@ public class Game {
     private boolean winGoldCoinAndFindNextPlayer() {
         System.out.println("Answer was correct!!!!");
         players.get(currentPlayerIndex).winGoldCoin();
-        System.out.println(players.get(currentPlayerIndex)
+        System.out.println(players.get(currentPlayerIndex).getPlayerName()
                 + " now has "
                 + players.get(currentPlayerIndex).getNumberOfGoldCoins()
                 + " Gold Coins.");
@@ -100,7 +100,7 @@ public class Game {
      */
     public boolean wrongAnswer() {
         System.out.println("Question was incorrectly answered");
-        System.out.println(players.get(currentPlayerIndex) + " was sent to the penalty box");
+        System.out.println(players.get(currentPlayerIndex).getPlayerName() + " was sent to the penalty box");
         players.get(currentPlayerIndex).sendToPenaltyBox();
 
         nextPlayer();
