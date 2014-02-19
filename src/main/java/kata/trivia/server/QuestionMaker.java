@@ -1,9 +1,16 @@
 package kata.trivia.server;
 
+import java.util.LinkedList;
+
 /**
  * Created by ben on 14-2-19.
  */
 public class QuestionMaker {
+    private LinkedList popQuestions = new LinkedList();
+    private LinkedList scienceQuestions = new LinkedList();
+    private LinkedList sportsQuestions = new LinkedList();
+    private LinkedList rockQuestions = new LinkedList();
+
     public void askQuestion(Player currentPlayer) {
         if (currentCategory(currentPlayer) == "Pop")
             System.out.println(popQuestions.removeFirst());
