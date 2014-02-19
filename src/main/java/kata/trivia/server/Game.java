@@ -3,7 +3,7 @@ package kata.trivia.server;
 import java.util.ArrayList;
 
 public class Game {
-    private ArrayList players = new ArrayList();
+    private ArrayList<Player> players = new ArrayList<Player>();
     private int[] purses = new int[6];
     private boolean[] inPenaltyBox = new boolean[6];
 
