@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Game {
     private ArrayList<Player> players = new ArrayList<Player>();
-    private int[] purses = new int[6];
     private boolean[] inPenaltyBox = new boolean[6];
 
     private int currentPlayerInt = 0;
@@ -14,7 +13,6 @@ public class Game {
 
     public void add(String playerName) {
         players.add(new Player(playerName));
-        purses[players.size()] = 0;
         inPenaltyBox[players.size()] = false;
 
         System.out.println(playerName + " was added");
@@ -86,10 +84,10 @@ public class Game {
 
     private boolean winGoldCoinAndFindNextPlayer() {
         System.out.println("Answer was correct!!!!");
-        purses[currentPlayerInt]++;
+        currentPlayer.winGoldCoin();
         System.out.println(players.get(currentPlayerInt)
                 + " now has "
-                + purses[currentPlayerInt]
+                + currentPlayer.getNumberOfGoldCoins（）
                 + " Gold Coins.");
 
         boolean willContinue = willGameContinue();
@@ -120,6 +118,6 @@ public class Game {
 
 
     private boolean willGameContinue() {
-        return !(purses[currentPlayerInt] == 6);
+        return !(currentPlayer.getNumberOfGoldCoins() == 6);
     }
 }
